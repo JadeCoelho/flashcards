@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-size: 1rem;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #3e63dd;
+  color: #fff;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #577cf6;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: #2828294d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.card-box {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 330px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px 0 #0000004a;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+}
+
+.obs {
+  padding: 8px;
+  font-size: 0.8rem;
+  color: #404040;
+  text-align: center;
+}
+
+.flashcards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.flashcard {
+  width: 370px;
+  min-height: 200px;
+  word-wrap: break-word;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 #00000021;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px 15px;
+}
+
+.flashcard h2 {
+  font-size: 1rem;
+}
+
+.remove {
+  color: #bb0101;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background-color: #eee;
+}
+
+.number {
+  color: #577cf6;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 7px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .flashcard {
+    margin: 10px auto;
+  }
+}
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-box,
+  .flashcard {
+    width: 100%;
+  }
+}
