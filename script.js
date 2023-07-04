@@ -1,5 +1,5 @@
 const flashcards = document.querySelector(".flashcards");
-const card = document.querySelector(".card");
+const cardForm = document.querySelector(".card-form");
 const question = document.querySelector("#question");
 const answer = document.querySelector("#answer");
 
@@ -9,19 +9,21 @@ let myLocal = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
 
-const create = () => (card.style.display = "flex");
-const cancel = () => (card.style.display = "none");
+function create() {
+  cardForm.style.display = "flex";
+}
 
-const removeAll = () => {
+function cancel() {
+  cardForm.style.display = "none";
+}
+
+function removeAll() {
   if (confirm("Deseja mesmo excluir todos os cards?")) {
     localStorage.clear();
     flashcards.innerHTML = "";
     myLocal = [];
   }
-  window.location.reload()
-};
-
-console.log(myLocal);
+}
 
 function save() {
   if (question.value.length >= 1 && answer.value.length >= 1) {
@@ -42,10 +44,10 @@ function save() {
 
 myLocal.forEach(addCard);
 
-function addCard(c) {
-  card.style.display = "none";
+function addCard(card) {
+  cardForm.style.display = "none";
 
-  if (c.question.length >= 1 && c.answer.length >= 1) {
+  if (card.question.length >= 1 && card.answer.length >= 1) {
     let div = document.createElement("div");
     let h2question = document.createElement("h2");
     let h2answer = document.createElement("h2");
@@ -54,18 +56,20 @@ function addCard(c) {
     let number = document.createElement("span");
 
     div.className = "flashcard";
+    div.setAttribute("id", id);
+
     remove.className = "remove";
     number.className = "number";
 
-    div.setAttribute("id", id);
     h2question.setAttribute("style", "text-align: justify");
+    h2question.innerHTML = card.question;
+
     h2answer.setAttribute(
       "style",
       "text-align: center; display: none; color: green"
     );
+    h2answer.innerHTML = card.answer;
 
-    h2question.innerHTML = c.question;
-    h2answer.innerHTML = c.answer;
     btn.innerHTML = "mostrar";
     remove.innerHTML = "x";
     number.innerHTML = id + 1;
@@ -96,6 +100,7 @@ function addCard(c) {
         window.location.reload();
       }
     });
+
     id++;
   }
 }

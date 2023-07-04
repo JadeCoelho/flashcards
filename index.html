@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flashcards</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="nav">
       <h1>Flashcards</h1>
       <div>
         <button onclick="create()">Novo card</button>
-        <button onclick="removeAll()">Excluir tudo</button>
+        <button onclick="removeAll()">Excluir todos</button>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-box">
+    <div class="card-form">
+      <div class="card-form-box">
         <h2>Criar card</h2>
         <input type="text" id="question" placeholder="Insira a questão" />
         <input type="text" id="answer" placeholder="Insira a resposta" />
@@ -31,9 +31,14 @@
       </div>
     </div>
 
-    <div class="flashcards">
+    <div class="flashcards"></div>
 
-    </div>
+    <footer>
+      Criado por
+      <a href="https://www.linkedin.com/in/jademattoscoelho/" target="_blank"
+        >Jade Mattos</a
+      >
+    </footer>
 
     <script src="script.js"></script>
   </body>
