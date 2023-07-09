@@ -114,17 +114,16 @@ input::placeholder {
 
 .remove {
   color: #bb0101;
-  font-size: 20px;
+  font-size: 18px;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 3px 10px;
-  margin: 5px;
+  margin-right: 7px;
   cursor: pointer;
 }
 
 .remove:hover {
-  background-color: #eee;
+  color: #404040;
 }
 
 .number {
@@ -136,8 +135,8 @@ input::placeholder {
   margin: 7px;
 }
 
-footer{
-  font-size: .85rem;
+footer {
+  font-size: 0.85rem;
   padding: 8px;
 }
 
@@ -148,7 +147,6 @@ footer a {
 @media (max-width: 768px) {
   .flashcard {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
   }
 }
